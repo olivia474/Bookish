@@ -1,0 +1,18 @@
+@model Book
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Title</h1>
+    <p>Written by @Model.Author.Name</p>
+    <img src="@Model.CoverImageUrl" alt="@Model.Title cover" style="width:500px;height:600px;">
+    <p>@Model.Blurb</p>
+    <h2>Genres</h2>
+    <ul>
+        @foreach (var genre in Model.Genres)
+        {
+            <li>@genre.Name</li>
+        }
+    </ul>
+</div>
